@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.style.TextAlign
 
 // Define custom colors to match the green/yellow/black/gray theme
-val MainBackgroundLightGray = Color(0xFFF2F4F7) // Light gray background
+val MainBackgroundLightGray = Color(0xFFD9DADC) // Light gray background
 val AccentGreen = Color(0xFF99FF00) // Vibrant green for accents
 val AccentYellow = Color(0xFFFDD000) // Yellow for accents
 val DarkTextBlack = Color(0xFF1E1E1E) // Dark text/elements
@@ -96,8 +96,8 @@ fun WelcomeScreen(onGetStartedClick: () -> Unit) {
         Spacer(modifier = Modifier.height(64.dp)) // Increased spacing
 
         Text(
-            text = "Welcome to E-wallet",
-            fontSize = 32.sp,
+            text = "Welcome to Expense Tracker",
+            fontSize = 22.sp,
             fontWeight = FontWeight.ExtraBold,
             color = DarkTextBlack, // Dark text color
             modifier = Modifier.padding(horizontal = 16.dp)
@@ -106,7 +106,7 @@ fun WelcomeScreen(onGetStartedClick: () -> Unit) {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Simple way to manage money transfer and receive quickly.",
+            text = "Simple way to manage money.",
             fontSize = 18.sp,
             color = MediumGrayText, // Medium gray text color
             fontWeight = FontWeight.Normal,

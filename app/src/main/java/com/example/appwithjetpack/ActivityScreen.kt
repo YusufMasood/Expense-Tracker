@@ -334,7 +334,7 @@ fun CategoryCard(category: ActivityScreen) {
     }
 }
 
-@Preview(showBackground = true)
+
 @Composable
 fun ActivityScreenPreview() {
     ActivityScreenContent(onNavigateBack = {})

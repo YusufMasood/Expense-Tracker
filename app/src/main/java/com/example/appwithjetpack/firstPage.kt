@@ -1,6 +1,7 @@
 // PaymentAppUI.kt
 package com.example.appwithjetpack
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -247,14 +248,16 @@ fun PaymentAppUI(onNavigateToActivityScreen: () -> Unit) { // Accepts navigation
 
                 ActionButton(
                     painter = painterResource(R.drawable.withdraw),
-                    text = "Withdraw",
+                    text = "Spend",
                     onClick = { /* TODO: Handle Withdraw click */ }
                 )
 
                 ActionButton(
                     painter = painterResource(R.drawable.activity),
-                    text = "Activity",
-                    onClick = onNavigateToActivityScreen // This calls the lambda from MainActivity
+                    text = "Statistic",
+                    onClick = {
+                        Log.d("PaymentApp", "Activity button clicked!")
+                        onNavigateToActivityScreen() } // This calls the lambda from MainActivity
                 )
             }
 
@@ -282,7 +285,11 @@ fun PaymentAppUI(onNavigateToActivityScreen: () -> Unit) { // Accepts navigation
             // Transaction List
             val transactions = listOf(
                 Transaction(Icons.Default.Send, "Salman Khan", "- ₹128.08"),
-                Transaction(Icons.Default.Add, "Gym", "- ₹30.08")
+                Transaction(Icons.Default.Add, "Chicken", "- ₹150.08"),
+                Transaction(Icons.Default.Add, "Gym", "- ₹3000"),
+                Transaction(Icons.Default.Add, "Water", "- ₹25"),
+                Transaction(Icons.Default.Add, "Rent", "- ₹4500"),
+                Transaction(Icons.Default.Add, "Bhai", "+ 12000")
             )
 
             LazyColumn(
@@ -377,7 +384,7 @@ fun TransactionItem(transaction: Transaction) {
     }
 }
 
-@Preview(showBackground = true)
+
 @Composable
 fun PaymentAppUIPreview() {
     PaymentAppUI(onNavigateToActivityScreen = { })
